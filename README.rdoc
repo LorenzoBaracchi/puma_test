@@ -35,7 +35,9 @@ Please feel free to use a different markup language if you do not plan to run
 * cap -T
 
 * Server
-** install rvm
+** install rvm, ruby, nodejs
+** sudo apt-get install ruby-dev
+** gem install puma
 ** set password
 ** sudo groupadd deployers
 ** sudo useradd deploy
