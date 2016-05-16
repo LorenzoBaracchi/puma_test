@@ -33,6 +33,7 @@ Please feel free to use a different markup language if you do not plan to run
   gem 'capistrano3-puma' , group: :development
 * bundle exec cap install
 * cap -T
+* create puma.rb
 
 * Server
 ** install rvm, ruby, nodejs
@@ -44,3 +45,5 @@ Please feel free to use a different markup language if you do not plan to run
 ** sudo usermod -a -G deployers deploy
 ** sudo chown -R deploy:deployers /var/www/puma
 ** sudo chmod -R g+w /var/www/puma
+** ENV--> production
+** ENV--> secret key (rake secret)
