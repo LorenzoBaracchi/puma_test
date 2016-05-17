@@ -13,6 +13,8 @@ set :git_https_password, ENV['GITPWD']
 set :deploy_to, '/var/www/puma'
 set :puma_conf, '/var/www/puma/current/config/puma.rb'
 set :puma_pid, "/var/www/puma/shared/tmp/pids/puma.pid"
+set :puma_access_log, "/var/log/puma_access.log"
+set :puma_error_log, "/var/log/puma_error.log"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -44,9 +46,11 @@ namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+       within release_path do
+         with rails_env: fetch(:rails_env) do
+           execute :rake, 'assets:precompile'
+         end
+       end
     end
   end
 
