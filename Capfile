@@ -3,7 +3,6 @@ require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
-require 'capistrano/rails/assets'
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -25,6 +24,8 @@ require 'capistrano/rails/assets'
 # require 'capistrano/passenger'
 
 require 'capistrano/rails'
+require 'capistrano/rails/assets'
+
 require 'capistrano/puma'
 require 'capistrano/puma/workers'
 
