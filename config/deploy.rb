@@ -12,6 +12,7 @@ set :git_https_password, ENV['GITPWD']
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/puma'
 set :puma_conf, '/var/www/puma/current/config/puma.rb'
+set :puma_pid, "/var/www/puma/shared/tmp/pids/puma.pid"
 
 # Default value for :scm is :git
 # set :scm, :git
